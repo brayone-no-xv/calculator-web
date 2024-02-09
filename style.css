@@ -1,0 +1,36 @@
+button{
+    margin: 20px 20px 0 0;
+    border-radius: 20px;
+    height: 60px;
+    width: 60px;
+    font-size: 18px;
+    background-color: aliceblue;
+}
+
+h1{
+    text-align: center;
+}
+body{
+    background-color: skyblue;
+}
+
+section{
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding: 0 20px;
+    max-width: fit-content;
+}
+
+.enter-button {
+    width: 55%;
+    background-color: pink;
+}
+
+.container button{
+    align-items: center;
+}
+
+button:hover{
+    background-color: orange;
+}
+
