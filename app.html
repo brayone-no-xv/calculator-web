@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="calculator.png"> -->
+    <script src="https://kit.fontawesome.com/1ee34bcf8f.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>    
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <h1>Calculator </h1>
+            <table>
+                <tr>
+                    <div id="output">
+                        <p id="outputValue" style="border: 1px;"></p>
+                    </div>
+                </tr>
+        <tr>
+            <td><button id="erase"><i class="fa-solid fa-delete-left"></i></button></td>
+            <td><button id="insert"><i class="fa-solid fa-divide"></i></button></td>
+            <td><button id="operator" onclick="calculate(bagi, num1,num2)">/</button></td>
+            <td><button id="operator" onclick="calculate(kali, num1,num2)">*</button></td>
+            <td><button id="result">Enter</button></td>
+        </tr>
+        <tr>
+            <td><button id="number" value="7">7</button></td>
+            <td><button id="number" value="8">8</button></td>
+            <td><button id="number" value="9">9</button></td>    
+            <td><button id="operator" onclick="calculate(kurang, num1,num2)">-</button></td>
+        </tr>
+        <tr>
+            <td><button id="number" value="4">4</button></td>
+            <td><button id="number" value="5">5</button></td>
+            <td><button id="number" value="6">6</button></td>
+            <td><button id="operator" onclick="calculate(tambah, num1,num2)">+</button></td>
+        </tr>
+        <tr>
+            <td><button id="number" value="1">1</button></td>
+            <td><button id="number" value="2">2</button></td>
+            <td><button id="number" value="3">3</button></td>
+            <td><button>0</button></td>
+        </tr>
+    </table>
+    </div>
+</section>
+    <script src="/script.js" text="Javascript"></script>
+</body>
+</html>
+
