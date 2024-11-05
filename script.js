@@ -1,4 +1,9 @@
-const operator = document.getElementById("operator");
+// first-class cetizien start
+const calculate = document.getElementById("operator");
+calculate.onclick = (operation,numA,numB) => {
+    return operation(numA,numB);
+}
+
 
 // operator aritmatika start
 const tambah = document.getElementById('tambah');
@@ -20,12 +25,14 @@ bagi.onclick = () => {
     return a / b;
 }
 
+// const bagi = document.getElementById('bagi');
+// bagi.onclick = (a,b) => {
+//     this.a = a;
+//     this.b = b;
+// }
+
 // operator aritmatika end
 
-// first-class cetizien start
-function calculate(operation,numA,numB) {
-    return operation(numA,numB);
-}
 
         // function expression start
             // const resultTambah = calculate(tambah, num1,num2);
@@ -42,8 +49,6 @@ function calculate(operation,numA,numB) {
 
         button.value = '';
     }
-        
-// first-class cetizien end
     
 // result        
     const result = document.getElementById("result");
