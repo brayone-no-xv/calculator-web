@@ -1,75 +1,78 @@
 // first-class cetizien start
-    const calculate = document.getElementById("operator");
-    calculate.onclick = (operation, num1, num2) => {
-    if (typeof num1 !== "number" || typeof num2 !== "number") {
-        throw new error("Expected a number"); // true
-    }
-    return operation(num1, num2); // false
-    };
 
+
+
+    // const AddValueFunction = function(number) {
+    //     const value = document.getElementById(number).value;
+    //     document.getElementById("outputValue").value += value;    
+    // };
+
+    // const AddValueFunction = function(id) {
+    //     const value = document.getElementById(id).value;
+    //     document.getElementById("outputValue").value += value;
+    // }
+
+    const AddValueFunction = document.querySelectorAll("#number");
+    AddValueFunction.forEach(button => {
+        button.addEventListener("click",() => {
+            const value = document.getElementById(id).value;
+            document.getElementById("outputValue").value += value;
+        });
+    });
+    
     // operator aritmatika start
-    const tambah = document.getElementById("tambah");
-    tambah.onclick = () => {
-    return operation(num1) + operation(num2);
+    const numTambah = document.getElementById('tambah');
+    numTambah.onclick = () => {
+        return num1 + num2;
+    };
+    
+    const numKali = document.getElementById('kali');
+    numKali.onclick = (num1,num2) => {
+        return num1 * num2;
     };
 
-    const kali = document.getElementById("kali");
-    kali.onclick = () => {
-    return operation(num1) * operation(num2);
+    const numKurang = document.getElementById('kurang');
+    numKurang.onclick = (num1,num2) => {
+        return num1 - num2;
     };
 
-    const kurang = document.getElementById("kurang");
-    kurang.onclick = () => {
-    return operation(num1) - operation(num2);
+    const numBagi = document.getElementById('bagi'); 
+    numBagi.onclick = (num1,num2) => {
+        return num1 / num2;
     };
 
-    const bagi = document.getElementById("bagi");
-    bagi.onclick = () => {
-    return operation(num1) / operation(num2);
+    function calculate(operation, num1, num2) {
+        return operation(num1, num2); // false
     };
 
-        // operator aritmatika end
+    // operator aritmatika end
 
-        // first-class cetizien end
+// first-class cetizien end
 
         // function expression start
-                // const resultTambah = calculate(tambah,num1,num2);
-                // resultTambah.innerHTML = num1 + num2;
-                // const resultKali   = calculate(kali, num1,num2);
-                // resultTambah.innerHTML = num1 * num2;
-                // const resultKurang = calculate(kurang, num1,num2);
-                // resultTambah.innerHTML = num1 - num2;
-                // const resultBagi   = calculate(bagi, num1,num2);
-                // resultBagi.innerHTML = num1 / num2;
+                
+                const resultTambah = calculate(tambah,num1,num2);
+                document.getElementById("outputValue").value = eval(numTambah);
+
+                const resultKali   = calculate(kali,num1,num2);
+                document.getElementById("outputValue").value = eval(numKali);
+                
+                const resultKurang = calculate(kurang,num1,num2);
+                document.getElementById("outputValue").value = eval(numKurang);
+                
+                const resultBagi   = calculate(bagi, num1,num2);
+                document.getElementById("outputValue").value = eval(numBagi);
+
         // function expression end
-
-    const number = document.querySelectorAll(".number").value;
-    number.onclick = function () {
-    const outputValue = document.getElementById("outputValue");
-    const p = outputValue.getElementsByTagName("p");
-    p[0].appendChild(document.createTextNode(input.value));
-
-    input.value = "";
-    };
 
     // result addeventlistener
     const result = document.getElementById("result");
-    result.addEventListener("click", OutputValue);
-
-    function OutputValue() {
-    const outputValue = document.getElementById("outputValue");
-    const p = outputValue.querySelector("p");
-
-    p[0].appendChild(document.createTextNode(input.value));
-    input.value = calculate();
-    }
+    result.addEventListener("click",OutputValue);
     // result addeventlistener
 
-
-    const erase = document.getElementById("erase");
-    erase.addEventListener("click", () => {
-        const outputValue = document.getElementById("outputValue");
-        outputValue.value = "";
+// menghapus angka start
+    const clear = document.getElementById("clear");
+    clear.addEventListener("click",() => {
+        document.getElementById("inputValue").value = " ";
     });
-
-// menghapus angka
+// menghapus angka end
