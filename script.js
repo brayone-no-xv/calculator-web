@@ -12,40 +12,55 @@
     //     document.getElementById("outputValue").value += value;
     // }
 
-    const AddValueFunction = document.querySelectorAll("#number");
+    // const AddValueFunction = document.querySelectorAll("#number");
+    // AddValueFunction.forEach(button => {
+    //     button.addEventListener("click", function(id) {
+    //         const value = document.getElementById(id).value;
+    //         document.getElementById("outputValue").value += value;
+    //     });
+    // });
+
+    const AddValueFunction = document.querySelectorAll("#number"); 
     AddValueFunction.forEach(button => {
-        button.addEventListener("click",() => {
-            const value = document.getElementById(id).value;
+        button.onclick = (number) => {
+            const value = number.target.value; 
+            document.getElementById("outputValue").value += value; 
+        };
+    });
+
+    const AddOperatorFunction = document.querySelectorAll("#operator"); 
+    AddValueFunction.forEach(button => {
+        button.onclick = (operator) => {
+            const value = operator.target.value;
             document.getElementById("outputValue").value += value;
-        });
+        };
     });
     
     // operator aritmatika start
-    const numTambah = document.getElementById('tambah');
-    numTambah.onclick = () => {
-        return num1 + num2;
-    };
-    
-    const numKali = document.getElementById('kali');
-    numKali.onclick = (num1,num2) => {
-        return num1 * num2;
-    };
 
-    const numKurang = document.getElementById('kurang');
-    numKurang.onclick = (num1,num2) => {
-        return num1 - num2;
-    };
-
-    const numBagi = document.getElementById('bagi'); 
-    numBagi.onclick = (num1,num2) => {
-        return num1 / num2;
-    };
-
-    function calculate(operation, num1, num2) {
-        return operation(num1, num2); // false
-    };
-
+    // if(){
+    //     numTambah.onclick = (num1,num2) => {
+    //     return num1 + num2;
+    //     };
+    // } else if() {
+    //     numKali.onclick = (num1,num2) => {
+    //     return num1 * num2;
+    //     };
+    // } else if() {
+    // numKurang.onclick = (num1,num2) => {
+    //     return num1 - num2;
+    // };
+    // } else if() {
+    // numBagi.onclick = (num1,num2) => {
+    //     return num1 / num2;
+    // };
+    // }
     // operator aritmatika end
+
+    // function calculate(operation, num1, num2) {
+    //     return operation(num1, num2); // false
+    // };
+
 
 // first-class cetizien end
 
@@ -72,7 +87,7 @@
 
 // menghapus angka start
     const clear = document.getElementById("clear");
-    clear.addEventListener("click",() => {
-        document.getElementById("inputValue").value = " ";
+        clear.addEventListener("click",() => {
+        document.getElementById("outputValue").value += " ";
     });
 // menghapus angka end
