@@ -13,17 +13,15 @@
     //     document.getElementById("outputValue").value += value;
     // }
 
-
     const AddValueFunction = document.querySelectorAll("#number"); 
-    const AddOperatorFunction = document.querySelectorAll("#operator"); 
-    
     AddValueFunction.forEach(button => {
         button.onclick = (number) => {
             const value = number.target.value; 
             document.getElementById("outputValue").value += value; 
         };
     });
-
+    
+    const AddOperatorFunction = document.querySelectorAll("#operator"); 
     AddOperatorFunction.forEach(button => {
         button.onclick = (operator) => {
             const value = operator.target.value;
@@ -32,46 +30,68 @@
     });
     
     // operator aritmatika start
+    // const tambah = document.getElementById("tambah");
+    // tambah.onclick = () => {
+    // return AddOperatorFunction;
+    // };
+
+    // const kali = document.getElementById("kali");
+    // kali.onclick = () => {
+    // return operation(num1) * operation(num2);
+    // };
+
+    // const kurang = document.getElementById("kurang");
+    // kurang.onclick = () => {
+    // return operation(num1) - operation(num2);
+    // };
+
+    // const bagi = document.getElementById("bagi");
+    // bagi.onclick = () => {
+    // return operation(num1) / operation(num2);
+    // };
+
 
     // if(){
-    //     numTambah.onclick = (num1,num2) => {
+    //     resultTambah.onclick = (num1,num2) => {
     //     return num1 + num2;
     //     };
     // } else if() {
-    //     numKali.onclick = (num1,num2) => {
+    //     resultKali.onclick = (num1,num2) => {
     //     return num1 * num2;
     //     };
     // } else if() {
-    // numKurang.onclick = (num1,num2) => {
+    //     resultKurang.onclick = (num1,num2) => {
     //     return num1 - num2;
     // };
     // } else if() {
-    // numBagi.onclick = (num1,num2) => {
+    //     resultBagi.onclick = (num1,num2) => {
     //     return num1 / num2;
     // };
     // }
-    // operator aritmatika end
+    //operator aritmatika end
 
-    // function calculate(operation, num1, num2) {
-    //     return operation(num1, num2); // false
-    // };
+    function calculate(operation, num1, num2) {
+        return operation(num1, num2); // false
+    };
+
+// operator aritmatika end
 
 
 // first-class cetizien end
 
         // function expression start
                 
-                // const resultTambah = calculate(tambah,num1,num2);
-                // document.getElementById("outputValue").value = eval(numTambah);
+                const resultTambah = AddOperatorFunction(tambah,num1,num2);
+                document.getElementById("outputValue").value = eval(resultTambah);
 
-                // const resultKali   = calculate(kali,num1,num2);
-                // document.getElementById("outputValue").value = eval(numKali);
+                const resultKali   = AddOperatorFunction(kali,num1,num2);
+                document.getElementById("outputValue").value = eval(resultKali);
                 
-                // const resultKurang = calculate(kurang,num1,num2);
-                // document.getElementById("outputValue").value = eval(numKurang);
+                const resultKurang = AddOperatorFunction(kurang,num1,num2);
+                document.getElementById("outputValue").value = eval(resultKurang);
                 
-                // const resultBagi   = calculate(bagi, num1,num2);
-                // document.getElementById("outputValue").value = eval(numBagi);
+                const resultBagi   = AddOperatorFunction(bagi,num1,num2);
+                document.getElementById("outputValue").value = eval(resultBagi);
 
         // function expression end
 
@@ -87,31 +107,6 @@
     });
 // menghapus angka end
 
-
-    // operator aritmatika end
-        const tambah = document.getElementById("tambah");
-        tambah.onclick = () => {
-        return operation(num1) + operation(num2);
-        };
-
-        const kali = document.getElementById("kali");
-        kali.onclick = () => {
-        return operation(num1) * operation(num2);
-        };
-
-        const kurang = document.getElementById("kurang");
-        kurang.onclick = () => {
-        return operation(num1) - operation(num2);
-        };
-
-        const bagi = document.getElementById("bagi");
-        bagi.onclick = () => {
-        return operation(num1) / operation(num2);
-        };
-
-    // operator aritmatika end
-
-
     // result addeventlistener start
     function OutputValue() {
     const outputValue = document.getElementById("outputValue");
@@ -123,11 +118,11 @@
     // result addeventlistener end
 
     // erase start
-    const erase = document.getElementById("erase");
-    erase.addEventListener("click", () => {
-        const outputValue = document.getElementById("outputValue");
-        outputValue.value = "";
-    });
+    const erase = document.getElementById("clear");
+    erase.onclick = () => {
+        document.getElementById("outputValue").value = "";
+    };
+
     // erase start
 
 // menghapus angka
