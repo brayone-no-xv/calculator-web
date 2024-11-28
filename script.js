@@ -1,19 +1,24 @@
 const AddOperatorFunction = document.querySelectorAll("#operator");
 const AddValueFunction = document.querySelectorAll("#number");
 
+// add number value start
 AddValueFunction.forEach((button) => {
   button.onclick = (number) => {
     const value = number.target.value;
     document.getElementById("outputValue").value += value;
   };
 });
+// add number value end
 
+// add operator function start
 AddOperatorFunction.forEach((button) => {
   button.onclick = (operator) => {
     const value = operator.target.value;
     document.getElementById("outputValue").value += value;
   };
 });
+// add operator function end
+
 
 // menghapus angka start
 const clear = document.getElementById("clear");
