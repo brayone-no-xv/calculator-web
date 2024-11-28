@@ -1,107 +1,78 @@
-// first-class cetizien start
+const AddOperatorFunction = document.querySelectorAll("#operator");
+const AddValueFunction = document.querySelectorAll("#number");
+const operator1 = parseInt(AddOperatorFunction[1]);
+const operator2 = parseInt(AddOperatorFunction[2]);
 
-    const calculate = document.getElementById("operator");
-    calculate.onclick = (operation, num1, num2) => {
-    if (typeof num1 !== "number" || typeof num2 !== "number") {
-        throw new error("Expected a number"); // true
-    }
-    return operation(num1, num2); // false
-    };
+AddValueFunction.forEach((button) => {
+  button.onclick = (number) => {
+    const value = number.target.value;
+    document.getElementById("outputValue").value += value;
+  };
+});
 
-    // const AddOperatorFunction = function(id) {
-    //     const value = document.getElementById(id).value;
-    //     document.getElementById("outputValue").value += value;
-    // }
+AddOperatorFunction.forEach((button) => {
+  button.onclick = (operator) => {
+    const value = operator.target.value;
+    document.getElementById("outputValue").value += value;
+  };
+});
 
+// operator aritmatika start
 
-    const AddValueFunction = document.querySelectorAll("#number"); 
-    const AddOperatorFunction = document.querySelectorAll("#operator"); 
-    const operator1 = parseInt(AddOperatorFunction[1]);
-    const operator2 = parseInt(AddOperatorFunction[2]);
+// if(AddOperatorFunction === '+'){
+//     numTambah.onclick = (operator1,operator2) => operator1 + operator2;
+//     };
+// } else if(AddOperatorFunction === '*') {
+//     numKali.onclick = (num1,num2) => {
+//     return num1 * num2;
+//     };
+// } else if(AddOperatorFunction === '-') {
+// numKurang.onclick = (num1,num2) => {
+//     return num1 - num2;
+// };
+// } else if(AddOperatorFunction === '/') {
+// numBagi.onclick = (num1,num2) => {
+//     return num1 / num2;
+// };
+// }
 
-    AddValueFunction.forEach(button => {
-        button.onclick = (number) => {
-            const value = number.target.value; 
-            document.getElementById("outputValue").value += value; 
-        };
-    });
+// operator aritmatika end
 
-    AddOperatorFunction.forEach(button => {
-        button.onclick = (operator) => {
-            const value = operator.target.value;
-            document.getElementById("outputValue").value += value;
-        };
-    });
-    
-    // operator aritmatika start
-
-    // if(AddOperatorFunction === '+'){    
-    //     numTambah.onclick = (operator1,operator2) => operator1 + operator2;
-    //     };
-    // } else if(AddOperatorFunction === '*') {
-    //     numKali.onclick = (num1,num2) => {
-    //     return num1 * num2;
-    //     };
-    // } else if(AddOperatorFunction === '-') {
-    // numKurang.onclick = (num1,num2) => {
-    //     return num1 - num2;
-    // };
-    // } else if(AddOperatorFunction === '/') {
-    // numBagi.onclick = (num1,num2) => {
-    //     return num1 / num2;
-    // };
-    // }
-    
-    // operator aritmatika end
-
-    // function calculate(operation, num1, num2) {
-    //     return operation(num1, num2); // false
-    // };
-
+// function calculate(operation, num1, num2) {
+//     return operation(num1, num2); // false
+// };
 
 // first-class cetizien end
 
-        // function expression start
-                
-                // const resultTambah = calculate(tambah,num1,num2);
-                // document.getElementById("outputValue").value = eval(numTambah);
+// function expression start
 
-                // const resultKali   = calculate(kali,num1,num2);
-                // document.getElementById("outputValue").value = eval(numKali);
-                
-                // const resultKurang = calculate(kurang,num1,num2);
-                // document.getElementById("outputValue").value = eval(numKurang);
-                
-                // const resultBagi   = calculate(bagi, num1,num2);
-                // document.getElementById("outputValue").value = eval(numBagi);
+// const resultTambah = calculate(tambah,num1,num2);
+// document.getElementById("outputValue").value = eval(numTambah);
 
-        // function expression end
+// const resultKali   = calculate(kali,num1,num2);
+// document.getElementById("outputValue").value = eval(numKali);
 
-    // result addeventlistener
-    const result = document.getElementById("result");
-    result.addEventListener("click",OutputValue);
-    // result addeventlistener
+// const resultKurang = calculate(kurang,num1,num2);
+// document.getElementById("outputValue").value = eval(numKurang);
+
+// const resultBagi   = calculate(bagi, num1,num2);
+// document.getElementById("outputValue").value = eval(numBagi);
+
+// function expression end
 
 // menghapus angka start
+const clear = document.getElementById("clear");
+clear.addEventListener("click", clearValue);
 
-    function clearValue(id){
-        document.getElementById("outputValue").value= " ";
-   }
-
+function clearValue() {
+  document.getElementById("outputValue").value = " ";
+}
 // menghapus angka end
 
-
-    // result addeventlistener start
-    function OutputValue() {
-    const outputValue = document.getElementById("outputValue");
-    const p = outputValue.querySelector("p");
-
-    p[0].appendChild(document.createTextNode(input.value));
-    input.value = calculate();
-    }
-    // result addeventlistener end
-
-    // erase start
-    // erase start
-
-// menghapus angka
+// result start
+function ResultValue(id) {
+  let CurrentValue = document.getElementById("outputValue").value;
+  let value = eval(CurrentValue)
+  document.getElementById("outputValue").value = value;
+}
+// result end
