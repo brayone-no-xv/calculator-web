@@ -84,11 +84,6 @@
 
 // menghapus angka start
 
-    // const erase = document.getElementById("erase");
-    // erase.addEventListener("click", () => { 
-    //     document.getElementById("erase").value = "";
-    // });
-
     function clearValue(id){
         document.getElementById("outputValue").value= " ";
    }
