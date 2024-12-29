@@ -1,3 +1,4 @@
+// mengambil elemen id
 const AddOperatorFunction = document.querySelectorAll("#operator");
 const AddValueFunction = document.querySelectorAll("#number");
 
@@ -19,7 +20,6 @@ AddOperatorFunction.forEach((button) => {
 });
 // add operator function end
 
-
 // menghapus angka start
 const clear = document.getElementById("clear");
 clear.addEventListener("click", clearValue);
@@ -32,7 +32,16 @@ function clearValue() {
 // result start
 function ResultValue(id) {
   let CurrentValue = document.getElementById("outputValue").value;
-  let value = eval(CurrentValue)
-  document.getElementById("outputValue").value = value;
+  let value = eval(CurrentValue);
+  setInterval(() => {
+    document.getElementById("outputValue").value = value;
+  }),
+    2000;
 }
+
+// const container = document.createElement("div");
+// container.classList.add("InnerText");
+// container.append(textContainer);
+// container.setAttribute("id", `todo-${todoObject.id}`); // nambah nilai id
+
 // result end
