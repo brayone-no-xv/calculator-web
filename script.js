@@ -28,17 +28,12 @@ clearValue.addEventListener("click", () => {
 
 // result start
 function ResultValue(id) {
-  let CurrentValue = document.getElementById("outputValue").value;
-  let value = eval(CurrentValue);
+  const CurrentValue = outputValue.value;
+  const value = eval(CurrentValue);
   setInterval(() => {
     document.getElementById("outputValue").value = value;
   }),
     2000;
 }
-
-// const container = document.createElement("div");
-// container.classList.add("InnerText");
-// container.append(textContainer);
-// container.setAttribute("id", `todo-${todoObject.id}`); // nambah nilai id
 
 // result end
