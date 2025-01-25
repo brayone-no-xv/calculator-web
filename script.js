@@ -1,22 +1,27 @@
 // mengambil elemen id
-const operatorButton = document.querySelectorAll("#operator");
-const numberButton = document.querySelectorAll("#number");
-const clearButton = document.getElementById("clear");
-const outputValue = document.getElementById("outputValue");
+const outputValue = $("#outputValue");
 
 // add number value start
-numberButton.forEach((button) => {
-  button.onclick = () => {
-    outputValue.value += button.value;
-  };
+const numberButton = $("#number");
+$(numberButton).each(function (button) {
+  button.on("click", function () {
+    $(outputValue).value += button.value;
+  });
 });
 // add number value end
 
+const boxes = $("#box1 div");
+$(boxes).each(function () {
+  const TextBoxes = $(this).attr("TextBoxes");
+  $(this).text(TextBoxes);
+});
+
 // add operator function start
+const operatorButton = document.querySelectorAll("#operator");
 operatorButton.forEach((button) => {
-  button.onclick = () => {
+  button.addEventListener("click", () => {
     outputValue.value += button.value;
-  };
+  });
 });
 // add operator function end
 
@@ -27,6 +32,7 @@ clearButton.addEventListener("click", () => {
 // menghapus angka end
 
 // result start
+const clearButton = document.getElementById("clear");
 function calculatorResult(id) {
   outputValue.value = eval(outputValue.value);
 }
