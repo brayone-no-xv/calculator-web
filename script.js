@@ -3,23 +3,17 @@ const outputValue = $("#outputValue");
 
 // add number value start
 const numberButton = $("#number");
-$(numberButton).each(function (button) {
-  button.on("click", function () {
+$(numberButton).each(function (this) {
+  this.on("click", function () {
     $(outputValue).value += button.value;
   });
 });
 // add number value end
 
-const boxes = $("#box1 div");
-$(boxes).each(function () {
-  const TextBoxes = $(this).attr("TextBoxes");
-  $(this).text(TextBoxes);
-});
-
 // add operator function start
 const operatorButton = document.querySelectorAll("#operator");
-operatorButton.forEach((button) => {
-  button.addEventListener("click", () => {
+operatorButton.forEach((this) => {
+  this.addEventListener("click", () => {
     outputValue.value += button.value;
   });
 });
@@ -33,8 +27,8 @@ clearButton.addEventListener("click", () => {
 
 // result start
 const clearButton = document.getElementById("clear");
-function calculatorResult(id) {
-  outputValue.value = eval(outputValue.value);
+function calculatorResult() {
+  outputValue.value = eval(this.value);
 }
 
 // result end
