@@ -9,8 +9,9 @@
     
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="calculator.png"> -->
     <script src="https://kit.fontawesome.com/1ee34bcf8f.js" crossorigin="anonymous"></script>
+    <script src="jquery-3.7.1.min.js"></script>
 
-    <title>Document</title>    
+    <title>CALCULATOR APP</title>    
 </head>
 <!-- header -->
  
@@ -19,39 +20,32 @@
     <section>
         <div class="container">
             <h1>Calculator </h1>
-            <table>
-                <tr>
-                    <div id="output">
-                        <!-- <p id="outputValue" style="border: 1px;"></p> -->
-                        <input id="operator" type="button" value="+">    
-                    </div>
-                </tr>
-        <tr>
-            <td><input id="number" type="button" value="1"></td>
-            <td><input id="number" type="button" value="2"></td>
-            <td><input id="number" type="button" value="3"></td>    
-            <td><input id="operator" type="button" value="+"></td>    
-            <!-- <td><button id="operator" onclick="calculate(kurang,num1,num2)">-</button></td> -->
+            <input id="outputValue"  type="text" placeholder="output" ></input> <br>
+            <input id="clear" class="numberColor" type="button" value="C">    
+        
+        <table> 
+        <tr> 
+            <td><input id="number" class="numberColor" type="button" value="1"></td>
+            <td><input id="number" class="numberColor" type="button" value="2"></td>
+            <td><input id="number" class="numberColor" type="button" value="3"></td>
+            <td><input id="operator"  class="numberColor" type="button" value="+"></td>    
         </tr>
         <tr>
-            <td><input id="number" type="button" value="4"></td>
-            <td><input id="number" type="button" value="5"></td>
-            <td><input id="number" type="button" value="6"></td>
-            <td><input id="operator" type="button" value="-"></td>    
-            <!-- <td><button id="operator" onclick="calculate(tambah,num1,num2)">+</button></td> -->
+            <td><input id="number"  class="numberColor" type="button" value="4"></td>
+            <td><input id="number"  class="numberColor" type="button" value="5"></td>
+            <td><input id="number"  class="numberColor" type="button" value="6"></td>
+            <td><input id="operator"  class="numberColor" type="button" value="-"></td>    
         </tr>
         <tr>
-            <td><input id="number" type="button" value="7"></td>
-            <td><input id="number" type="button" value="8"></td>
-            <td><input id="number" type="button" value="9"></td>
-            <td><input id="number" type="button" value="x"></td>
+            <td><input id="number"  class="numberColor" type="button" value="7"></td>
+            <td><input id="number"  class="numberColor" type="button" value="8"></td>
+            <td><input id="number"  class="numberColor" type="button" value="9"></td>
+            <td><input id="operator"  class="numberColor" type="button" value="/"></td>    
         </tr>
         <tr>
-            <!-- <td><input id="erase"><i class="fa-solid fa-delete-left"></i></input></td> -->
-            <td><input id="operator" type="button" value="/"></td>
-            <td><input id="number" type="button" value="0"></input></td>
-            <td><input id="operator" type="button" value="*"></td>
-            <td><input id="result" type="button" value="="></input></td>
+            <td><input id="operator"   class="numberColor" type="button" value="*"></td>
+            <td><input id="number"     class="numberColor" type="button" value="0"></input></td>
+            <td><input id="calculate"  onclick = "calculatorResult('this.id')" class="numberColor" type="button" value="="></input></td>
         </tr>
     </table>
     </div>

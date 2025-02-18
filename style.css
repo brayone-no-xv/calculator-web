@@ -1,41 +1,41 @@
-button{
-    margin: 20px 20px 0 0;
-    border-radius: 20px;
-    height: 60px;
-    width: 60px;
-    font-size: 18px;
-    background-color: aliceblue;
+.numberColor {
+  margin: 20px 20px 0 0;
+  border-radius: 20px;
+  height: 60px;
+  width: 60px;
+  font-size: 18px;
+  background-color: aliceblue;
 }
 
-h1{
-    text-align: center;
-}
-body{
-    background-color: skyblue;
+h1 {
+  text-align: center;
 }
 
-section{
-    background-color: aliceblue;
-    border-radius: 15px;
-    padding: 0 20px;
-    max-width: fit-content;
+body {
+  background-color: skyblue;
 }
 
-.container{
-    background-color: white;
-    margin-top: 10%;
+section {
+  background-color: aliceblue;
+  border-radius: 15px;
+  padding: 0 20px;
+  max-width: fit-content;
+}
+
+.container {
+  background-color: white;
+  margin-top: 10%;
 }
 
 .enter-button {
-    width: auto;
-    background-color: pink;
+  width: auto;
+  background-color: pink;
 }
 
-.container button{
-    align-items: center;
+.container button {
+  align-items: center;
 }
 
-button:hover{
-    background-color: orange;
+button:hover {
+  background-color: orange;
 }
-
